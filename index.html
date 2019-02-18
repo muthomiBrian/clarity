@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Clarity</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <header class="header">
+    <nav>Clarity</nav>
+  </header>
+  <main class="main">
+    <p class="hero">Before you go,</p>
+    <form class="form" onsubmit="form.submit(event)">
+      <div class="input-group">
+        <label for="challenge" hidden>What do you need to figure out?</label>
+        <input type="text" name="challenge" id="challenge" placeholder="What do you need to figure out" />
+      </div>
+    </form>
+    <h2>Past challenges</h2>
+    <div class="past">
+      <div class="challenges">
+        <div class="card">
+          <p>This was a challenge I had in the past</p>
+        </div>
+        <div class="card">
+          <p>This was a another challenge I had in the past</p>
+        </div>
+        <div class="card">
+          <p>This was yet another challenge I had in the past and will be the last of these examples</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="./idb.js"></script>
+  <script src="./challenge-collection.js"></script>
+  <script src="./challenge-form.js"></script>
+  <script src="./challenge-repo.js"></script>
+  <script src="./challenge.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
