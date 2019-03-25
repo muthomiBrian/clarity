@@ -14,7 +14,7 @@ class Collection {
   insertChallenge(challenge) {
     this.container.insertAdjacentHTML('afterbegin', 
     `<div id="${challenge.id}" class="card ${challenge.strike ? 'strike': ''}" onclick="collection.toggleStrike('${challenge.id}')">
-    <p>${challenge.challenge}</p>
+    <p>'${sanitize(challenge.challenge)}'</p>
   </div>`)
   }
 

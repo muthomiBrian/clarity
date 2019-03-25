@@ -7,7 +7,7 @@ class challengeForm {
 
   async submit(event) {
     event.preventDefault();
-    const newChallenge = await new Challenge(this.form.challenge.value)
+    const newChallenge = await new Challenge(sanitize(this.form.challenge.value))
     this.form.reset();
     this.collection.addChallenge(newChallenge);
   }

@@ -1,4 +1,4 @@
-const cache_name = 'clarity-v1';
+const cache_name = 'clarity-v2';
 const cacheUrls = [
   './',
   './app.js',
@@ -6,6 +6,7 @@ const cacheUrls = [
   './challenge-form.js',
   './challenge-repo.js',
   './challenge.js',
+  './sanitize.js',
   './idb.js',
   './main.css'
 ];
@@ -17,6 +18,27 @@ self.addEventListener('install', function(event) {
         console.log('Opened cache');
         return cache.addAll(cacheUrls)
       })
+      .then(() => {
+
+      })
+  );
+});
+
+self.addEventListener('activate', function(event) {
+  // Active worker won't be treated as activated until promise
+  // resolves successfully.
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (cacheName !== cache_name) {
+            console.log('Deleting out of date cache:', cacheName);
+            
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
   );
 });
 

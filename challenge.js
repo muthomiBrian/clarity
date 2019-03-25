@@ -8,7 +8,7 @@ class Challenge {
 
   submit() {
     const challenge = {
-      challenge: this.challenge,
+      challenge: this.challenges,
       strike: this.strike,
       id: this.id
     }
@@ -20,7 +20,7 @@ class Challenge {
   }
 
   getId() {
-    const challengePre = this.challenge.replace(/ /g, '').slice(0,5);
+    const challengePre = this.challenge.replace(/ /g, '').slice(0,5).replace(/[&<>'"]/g, '');
     const challengePost = Date.now();
 
     return challengePre + challengePost;
