@@ -8,7 +8,7 @@ class Challenge {
 
   submit() {
     const challenge = {
-      challenge: this.challenges,
+      challenge: this.challenge,
       strike: this.strike,
       id: this.id
     }
