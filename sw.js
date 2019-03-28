@@ -1,4 +1,4 @@
-const cache_name = 'clarity-v2';
+const cache_name = 'clarity-v3';
 const cacheUrls = [
   './',
   './app.js',
